@@ -4,7 +4,7 @@ import io
 import base64
 
 def get_gemini_response(input,pdf_content,prompt):
-    model=genai.GenerativeModel('gemini-pro-vision')
+    model=genai.GenerativeModel('gemini-1.5-flash')
     out = [i for i in [input,pdf_content[0],prompt] if i is not None]
     response=model.generate_content(out)
     return response.text
